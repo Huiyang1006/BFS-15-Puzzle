@@ -7,12 +7,15 @@ public class BFS {
     //fields
     /*the frontier*/
     private final Queue<Node> frontier = new LinkedList<>();
+    /*record the goal state of the puzzle for check.*/
     private final int[][] goal;
     private final String[] actions;
+    /*Use a hashset to keep track of explored nodes and fast lookup.*/
     private final HashSet<int[][]> reached = new HashSet<>();
+    /*record the number of nodes expanded.*/
     int NodesExpanded = 0;
+    /*record the number of states repeated.*/
     int Repeated = 0;
-    /*the reached states should be stored in a hash table.*/
 
     //constructor
     public BFS(int[][] goal, String[] actions) {
@@ -32,6 +35,7 @@ public class BFS {
                 Node child = new Node(node);
                 child.moveTile(action);
                 child.track(action);
+                /*check if the child's state is reached.*/
                 if (!reached.contains(child.State)) {
                     Repeated++;
                     reached.add(child.State);
@@ -43,7 +47,9 @@ public class BFS {
 
     //this function is to search from the source state.//
     public Node search(Node node) {
+        /*initially, add the root node to frontier.*/
         frontier.add(node);
+        /*initially, add the initial state to frontier.*/
         reached.add(node.State);
 
         while (!frontier.isEmpty()) {

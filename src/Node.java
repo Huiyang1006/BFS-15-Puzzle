@@ -15,8 +15,9 @@ public class Node {
     public Node(Node TN) {
         //parent = TN;
         State = new int[ROW][];
+        /*can not directly use clone function because it copies the reference.*/
         for (int i = 0; i < ROW; i++) {
-            /*this is very interesting. can not directly use clone function because it's shallow copy here.*/
+            /*clone every list of the array.*/
             State[i] = TN.State[i].clone();
         }
         Moves = TN.Moves;
