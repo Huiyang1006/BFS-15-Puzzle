@@ -20,14 +20,6 @@ public class Demo {
 
     //this is the main function.
     public static void main(String[] args) {
-       /*
-        int[][] Org = {
-                {1, 0, 2, 4},
-                {5, 7, 3, 8},
-                {9, 6, 11, 12},
-                {13, 10, 14, 15}
-        };
-        */
 
         /*get the initial state Org*/
         int[][] Org = InputPuzzle();
@@ -48,7 +40,7 @@ public class Demo {
         /*actions are defined in terms of directions where the empty square can be moved to.*/
         String[] Actions = {"LEFT", "RIGHT", "UP", "DOWN"};
 
-        /*create the root node with the inputed initial state.*/
+        /*create the root node with the inputted initial state.*/
         Node S1 = new Node(Org);
         BFS solver = new BFS(Goal, Actions);
 
