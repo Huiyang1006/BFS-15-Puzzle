@@ -66,10 +66,10 @@ public class Demo {
 
         /*output the information collected.*/
         System.out.println("Moves: " + S2.Moves);
-        System.out.println("Number of Nodes expanded " + solver.NodesExpanded);
+        System.out.println("Number of Nodes expanded: " + solver.NodesExpanded);
         System.out.println("Time Taken: " + time_used + "ms");
         System.out.println("Memory Used: " + (memory_used / 1024) + "kb");
-        System.out.println("Number of states repeated " + solver.Repeated);
+        System.out.println("Number of states repeated: " + solver.Repeated);
 
     }
 }
