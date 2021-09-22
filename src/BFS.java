@@ -11,7 +11,7 @@ public class BFS {
     private final int[][] goal;
     private final String[] actions;
     /*Use a hashset to keep track of explored nodes and fast lookup.*/
-    private final HashSet<int[][]> reached = new HashSet<>();
+    private final HashSet<String> reached = new HashSet<>();
     /*record the number of nodes expanded.*/
     int NodesExpanded = 0;
     /*record the number of states repeated.*/
@@ -34,13 +34,15 @@ public class BFS {
             if (node.findActions(action)) {
                 Node child = new Node(node);
                 child.moveTile(action);
+                child.setHashState();
                 child.track(action);
                 /*check if the child's state is reached.*/
-                if (!reached.contains(child.State)) {
-                    Repeated++;
-                    reached.add(child.State);
+                if (!reached.contains(child.hashState)) {
+                    reached.add(child.hashState);
                     frontier.add(child);
                 }
+                else
+                    Repeated++;
             }
         }
     }
@@ -50,7 +52,7 @@ public class BFS {
         /*initially, add the root node to frontier.*/
         frontier.add(node);
         /*initially, add the initial state to frontier.*/
-        reached.add(node.State);
+        reached.add(node.hashState);
 
         while (!frontier.isEmpty()) {
             NodesExpanded++;

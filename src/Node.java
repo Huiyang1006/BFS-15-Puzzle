@@ -1,7 +1,8 @@
 public class Node {
     //fields
     final int[][] State;
-    //final Node parent;
+    /*transform the State to a string for comparing with reached*/
+    String hashState = "";
     /*position of the blank tile*/
     int Agent_X;
     int Agent_Y;
@@ -29,6 +30,7 @@ public class Node {
         State = state;
         //parent = null;
         find0();
+        setHashState();
     }
 
     //this function finds the position of the blank
@@ -40,6 +42,14 @@ public class Node {
                     Agent_Y = i;
                     break;
                 }
+            }
+        }
+    }
+
+    void setHashState() {
+        for (int i = 0; i < ROW; i++) {
+            for (int j = 0; j<COLUMN; j++) {
+                hashState = hashState + Integer.toHexString(State[i][j]);
             }
         }
     }
