@@ -1,6 +1,8 @@
 public class Node {
     //fields
     final int[][] State;
+    /*A pointer to the node's parent*/
+    final Node parent;
     /*transform the State to a string for comparing with reached*/
     String hashState = "";
     /*position of the blank tile*/
@@ -14,7 +16,7 @@ public class Node {
 
     //constructor - regular
     public Node(Node TN) {
-        //parent = TN;
+        parent = TN;
         State = new int[ROW][];
         /*can not directly use clone function because it copies the reference.*/
         for (int i = 0; i < ROW; i++) {
@@ -28,7 +30,7 @@ public class Node {
     //constructor - initial
     public Node(int[][] state) {
         State = state;
-        //parent = null;
+        parent = null;
         find0();
         setHashState();
     }
@@ -46,6 +48,7 @@ public class Node {
         }
     }
 
+    //this function create a String for the node, to serve as a key value.
     void setHashState() {
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j<COLUMN; j++) {

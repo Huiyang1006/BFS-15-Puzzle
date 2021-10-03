@@ -42,26 +42,47 @@ public class Demo {
 
         /*create the root node with the inputted initial state.*/
         Node S1 = new Node(Org);
-        BFS solver = new BFS(Goal, Actions);
+//        BFS solver1 = new BFS(Goal, Actions);
+//        DFS solver2 = new DFS(Goal, Actions);
+        IDDFS solver3 = new IDDFS(Goal, Actions);
+
+//        /*start collecting memory and time information.*/
+//        Long BFS_free_memory_before = Runtime.getRuntime().freeMemory();
+//        Long BFS_time_start = System.currentTimeMillis();
+//        /*step into the BFS.*/
+//        Node S2 = new Node(solver1.search(S1));
+//        /*BFS ended, record the current time and memory information.*/
+//        Long BFS_time_end = System.currentTimeMillis();
+//        long BFS_time_used = BFS_time_end - BFS_time_start;
+//        /*calculate the used memory space and time.*/
+//        Long BFS_free_memory_after = Runtime.getRuntime().freeMemory();
+//        long BFS_memory_used = BFS_free_memory_before - BFS_free_memory_after;
+//
+//        /*output the information collected.*/
+//        System.out.println("__________________BFS__________________");
+//        System.out.println("Moves: " + S2.Moves);
+//        System.out.println("Number of Nodes expanded: " + solver1.NodesExpanded);
+//        System.out.println("Time Taken: " + BFS_time_used + "ms");
+//        System.out.println("Memory Used: " + (BFS_memory_used / 1024) + "kb");
+//        System.out.println("Number of states repeated: " + solver1.Repeated);
 
         /*start collecting memory and time information.*/
-        Long free_memory_before = Runtime.getRuntime().freeMemory();
-        Long time_start = System.currentTimeMillis();
-        /*step into the BFS.*/
-        Node S2 = new Node(solver.search(S1));
-        /*BFS ended, record the current time and memory information.*/
-        Long time_end = System.currentTimeMillis();
-        long time_used = time_end - time_start;
+        long IDS_free_memory_before = Runtime.getRuntime().freeMemory();
+        Long IDS_time_start = System.currentTimeMillis();
+        /*step into the IDDFS.*/
+        Node S3 = new Node(solver3.Deepening(S1));
+        /*IDDFS ended, record the current time and memory information.*/
+        Long IDS_time_end = System.currentTimeMillis();
+        long IDS_time_used = IDS_time_end - IDS_time_start;
         /*calculate the used memory space and time.*/
-        Long free_memory_after = Runtime.getRuntime().freeMemory();
-        long memory_used = free_memory_before - free_memory_after;
+        long IDS_free_memory_after = Runtime.getRuntime().freeMemory();
+        long IDS_memory_used = IDS_free_memory_before - IDS_free_memory_after;
 
         /*output the information collected.*/
-        System.out.println("Moves: " + S2.Moves);
-        System.out.println("Number of Nodes expanded: " + solver.NodesExpanded);
-        System.out.println("Time Taken: " + time_used + "ms");
-        System.out.println("Memory Used: " + (memory_used / 1024) + "kb");
-        System.out.println("Number of states repeated: " + solver.Repeated);
-
+        System.out.println("__________________IDS__________________");
+        System.out.println("Moves: " + S3.Moves);
+        System.out.println("Number of Nodes expanded: " + solver3.NodesExpanded);
+        System.out.println("Time Taken: " + IDS_time_used + "ms");
+        System.out.println("Memory Used: " + (IDS_memory_used / 1024) + "kb");
     }
 }
