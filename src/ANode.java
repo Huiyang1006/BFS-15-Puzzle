@@ -49,6 +49,7 @@ public class ANode extends Node implements Comparable<ANode>{
 
         for (position_Y = 0; position_Y < ROW; position_Y++) {
             for (position_X = 0; position_X < COLUMN; position_X++) {
+                if (X==3&&Y==3) return 0;
                 if (State[position_Y][position_X] == num) {
                     return Math.abs(X - position_X) + Math.abs(Y - position_Y);
                 }

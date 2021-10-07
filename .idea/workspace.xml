@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9ad98ac-d121-46a3-a9da-495512c3bfc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ANode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Astar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BFS-15-Puzzle/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BFS-15-Puzzle/Demo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BFS-15-Puzzle/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BFS-15-Puzzle/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ANode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,8 +87,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ANode.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="3" />
+          <line>40</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
