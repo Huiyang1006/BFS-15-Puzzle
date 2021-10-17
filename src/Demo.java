@@ -14,7 +14,7 @@ public class Demo {
                 PuzzleArray[i][j] = puzzle.nextInt();
             }
         }
-        puzzle.close();
+        //puzzle.close();
         return PuzzleArray;
     }
 
@@ -91,58 +91,144 @@ public class Demo {
 //        System.out.println("Memory Used: " + (IDS_memory_used / 1024) + "kb");
 
 
-        Astar solver4 = new Astar(Goal, Actions,1);
-        /*start collecting memory and time information for h1.*/
-        long A_Star_h1_free_memory_before = Runtime.getRuntime().freeMemory();
-        Long A_Star_h1_time_start = System.currentTimeMillis();
+//        Astar solver4 = new Astar(Goal, Actions,1);
+//        /*start collecting memory and time information for h1.*/
+//        long A_Star_h1_free_memory_before = Runtime.getRuntime().freeMemory();
+//        Long A_Star_h1_time_start = System.currentTimeMillis();
+//
+//        /*step into the A_Star Search.*/
+//        ANode S4 = new ANode(solver4.search(S1));
+//
+//        /*A* Search ended, record the current time and memory information.*/
+//        Long A_Star_h1_time_end = System.currentTimeMillis();
+//        long A_Star_h1_time_used = A_Star_h1_time_end - A_Star_h1_time_start;
+//        /*calculate the used memory space and time.*/
+//        long A_Star_h1_free_memory_after = Runtime.getRuntime().freeMemory();
+//        long A_Star_h1_memory_used = A_Star_h1_free_memory_before - A_Star_h1_free_memory_after;
+//
+//        /*output the information collected.*/
+//        System.out.println("__________________A*Search h1: misplaced tiles__________________");
+//        System.out.println("Moves: " + S4.Moves);
+//        System.out.println("Number of Nodes expanded: " + solver4.NodesExpanded);
+//        System.out.println("Time Taken: " + A_Star_h1_time_used + "ms");
+////        System.out.println("Memory Used before: " + (A_Star_h1_free_memory_before) + "bit");
+////        System.out.println("Memory Used after: " + (A_Star_h1_free_memory_after) + "bit");
+//        System.out.println("Memory Used: " + (A_Star_h1_memory_used / 1024) + "kb");
+////        System.out.println("Number of states repeated: " + solver4.Repeated);
+//
+//        Astar solver5 = new Astar(Goal, Actions, 2);
+//        /*start collecting memory and time information for h2.*/
+//        long A_Star_h2_free_memory_before = Runtime.getRuntime().freeMemory();
+//        Long A_Star_h2_time_start = System.currentTimeMillis();
+//
+//        /*step into the A_Star Search.*/
+//        ANode S5 = new ANode(solver5.search(S1));
+//
+//        /*A* Search ended, record the current time and memory information.*/
+//        Long A_Star_h2_time_end = System.currentTimeMillis();
+//        long A_Star_h2_time_used = A_Star_h2_time_end - A_Star_h2_time_start;
+//        /*calculate the used memory space and time.*/
+//        long A_Star_h2_free_memory_after = Runtime.getRuntime().freeMemory();
+//        long A_Star_h2_memory_used = A_Star_h2_free_memory_before - A_Star_h2_free_memory_after;
+//
+//        /*output the information collected.*/
+//        System.out.println("__________________A*Search h2: Manhattan distance__________________");
+//        System.out.println("Moves: " + S5.Moves);
+//        System.out.println("Number of Nodes expanded: " + solver5.NodesExpanded);
+//        System.out.println("Time Taken: " + A_Star_h2_time_used + "ms");
+////        System.out.println("Memory Used before: " + (A_Star_h2_free_memory_before) + "bit");
+////        System.out.println("Memory Used after: " + (A_Star_h2_free_memory_after) + "bit");
+//        System.out.println("Memory Used: " + (A_Star_h2_memory_used / 1024) + "kb");
+////        System.out.println("Number of states repeated: " + solver5.Repeated);
+//
+//        System.out.println("__________________Comment__________________");
+//        System.out.println("A* Search only uses a very small amount of memory.");
+//        System.out.println("Due to the java's strategy of memory allocating, the memory used is tiny.");
 
-        /*step into the A_Star Search.*/
-        ANode S4 = new ANode(solver4.search(S1));
+        boolean exit = false;
+        do {
+            System.out.println("\nPlease select an option to proceed:");
+            System.out.println("1: Misplaced Tiles \n2: Manhattan  \n3: Reinput \n4: Exit");
+            Scanner input = new Scanner(System.in);
+            int option = input.nextInt();
 
-        /*A* Search ended, record the current time and memory information.*/
-        Long A_Star_h1_time_end = System.currentTimeMillis();
-        long A_Star_h1_time_used = A_Star_h1_time_end - A_Star_h1_time_start;
-        /*calculate the used memory space and time.*/
-        long A_Star_h1_free_memory_after = Runtime.getRuntime().freeMemory();
-        long A_Star_h1_memory_used = A_Star_h1_free_memory_before - A_Star_h1_free_memory_after;
+            switch (option) {
+                case 1 -> {
+                    idAstar solver6 = new idAstar(Goal, Actions, 1);
 
-        /*output the information collected.*/
-        System.out.println("__________________A*Search h1: misplaced tiles__________________");
-        System.out.println("Moves: " + S4.Moves);
-        System.out.println("Number of Nodes expanded: " + solver4.NodesExpanded);
-        System.out.println("Time Taken: " + A_Star_h1_time_used + "ms");
-//        System.out.println("Memory Used before: " + (A_Star_h1_free_memory_before) + "bit");
-//        System.out.println("Memory Used after: " + (A_Star_h1_free_memory_after) + "bit");
-        System.out.println("Memory Used: " + (A_Star_h1_memory_used / 1024) + "kb");
-//        System.out.println("Number of states repeated: " + solver4.Repeated);
+                    /*start collecting memory and time information for h2.*/
+                    long idA_Star_h1_free_memory_before = Runtime.getRuntime().freeMemory();
+                    Long idA_Star_h1_time_start = System.currentTimeMillis();
 
-        Astar solver5 = new Astar(Goal, Actions, 2);
-        /*start collecting memory and time information for h2.*/
-        long A_Star_h2_free_memory_before = Runtime.getRuntime().freeMemory();
-        Long A_Star_h2_time_start = System.currentTimeMillis();
+                    ANode S6 = new ANode(solver6.deepening(S1));
+                    /*A* Search ended, record the current time and memory information.*/
+                    Long idA_Star_h1_time_end = System.currentTimeMillis();
+                    long idA_Star_h1_time_used = idA_Star_h1_time_end - idA_Star_h1_time_start;
+                    /*calculate the used memory space and time.*/
+                    long idA_Star_h1_free_memory_after = Runtime.getRuntime().freeMemory();
+                    long idA_Star_h1_memory_used = idA_Star_h1_free_memory_before - idA_Star_h1_free_memory_after;
 
-        /*step into the A_Star Search.*/
-        ANode S5 = new ANode(solver5.search(S1));
-
-        /*A* Search ended, record the current time and memory information.*/
-        Long A_Star_h2_time_end = System.currentTimeMillis();
-        long A_Star_h2_time_used = A_Star_h2_time_end - A_Star_h2_time_start;
-        /*calculate the used memory space and time.*/
-        long A_Star_h2_free_memory_after = Runtime.getRuntime().freeMemory();
-        long A_Star_h2_memory_used = A_Star_h2_free_memory_before - A_Star_h2_free_memory_after;
-
-        /*output the information collected.*/
-        System.out.println("__________________A*Search h2: Manhattan distance__________________");
-        System.out.println("Moves: " + S5.Moves);
-        System.out.println("Number of Nodes expanded: " + solver5.NodesExpanded);
-        System.out.println("Time Taken: " + A_Star_h2_time_used + "ms");
+                    //        /*output the information collected.*/
+                    System.out.println("__________________idA*Search h1: Misplaced tiles__________________");
+                    System.out.println("Moves: " + S6.Moves);
+                    System.out.println("Number of Nodes expanded: " + solver6.NodesExpanded);
+                    System.out.println("Time Taken: " + idA_Star_h1_time_used + "ms");
 //        System.out.println("Memory Used before: " + (A_Star_h2_free_memory_before) + "bit");
 //        System.out.println("Memory Used after: " + (A_Star_h2_free_memory_after) + "bit");
-        System.out.println("Memory Used: " + (A_Star_h2_memory_used / 1024) + "kb");
+                    System.out.println("Memory Used: " + (idA_Star_h1_memory_used / 1024) + "kb");
 //        System.out.println("Number of states repeated: " + solver5.Repeated);
+                }
 
-        System.out.println("__________________Comment__________________");
-        System.out.println("A* Search only uses a very small amount of memory.");
-        System.out.println("Due to the java's strategy of memory allocating, the memory used is tiny.");
+                case 2 -> {
+                    idAstar solver7 = new idAstar(Goal, Actions, 2);
+
+                    /*start collecting memory and time information for h2.*/
+                    long idA_Star_h2_free_memory_before = Runtime.getRuntime().freeMemory();
+                    Long idA_Star_h2_time_start = System.currentTimeMillis();
+
+                    ANode S7 = new ANode(solver7.deepening(S1));
+                    /*A* Search ended, record the current time and memory information.*/
+                    Long idA_Star_h2_time_end = System.currentTimeMillis();
+                    long idA_Star_h2_time_used = idA_Star_h2_time_end - idA_Star_h2_time_start;
+                    /*calculate the used memory space and time.*/
+                    long idA_Star_h2_free_memory_after = Runtime.getRuntime().freeMemory();
+                    long idA_Star_h2_memory_used = idA_Star_h2_free_memory_before - idA_Star_h2_free_memory_after;
+
+                    //        /*output the information collected.*/
+                    System.out.println("__________________idA*Search h2: Manhattan distance__________________");
+                    System.out.println("Moves: " + S7.Moves);
+                    System.out.println("Number of Nodes expanded: " + solver7.NodesExpanded);
+                    System.out.println("Time Taken: " + idA_Star_h2_time_used + "ms");
+//        System.out.println("Memory Used before: " + (A_Star_h2_free_memory_before) + "bit");
+//        System.out.println("Memory Used after: " + (A_Star_h2_free_memory_after) + "bit");
+                    System.out.println("Memory Used: " + (idA_Star_h2_memory_used / 1024) + "kb");
+//        System.out.println("Number of states repeated: " + solver5.Repeated);
+                }
+
+                case 3 -> {
+                    /*get the initial state Org*/
+                    Org = InputPuzzle();
+
+                    /*Example input: 1 0 2 4 5 7 3 8 9 6 11 12 13 10 14 15*/
+
+                    System.out.println("Initial Puzzle State: ");
+                    for (int[] list : Org) {
+                        System.out.println(Arrays.toString(list));
+                    }
+
+                    S1 = new ANode(Org, Goal);
+                }
+
+                case 4 -> {
+                    System.out.println("Program terminates.");
+                    exit = true;
+                    input.close();
+                }
+
+                default -> System.out.println("Wrong choice.");
+            }
+
+        } while(!exit);
+
     }
 }

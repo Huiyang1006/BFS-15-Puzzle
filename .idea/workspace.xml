@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9ad98ac-d121-46a3-a9da-495512c3bfc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/idAstar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BFS-15-Puzzle/Astar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BFS-15-Puzzle/Astar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BFS-15-Puzzle/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BFS-15-Puzzle/Demo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ANode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ANode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Astar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Astar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Demo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +31,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1yNoE6wsHtCHZODAtmn1pY15gRo" />
   <component name="ProjectLevelVcsManager">
@@ -86,9 +92,14 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ANode.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/idAstar.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Astar.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

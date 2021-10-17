@@ -6,12 +6,12 @@ public class Astar {
     /*the frontier*/
     private final Queue<ANode> frontier= new PriorityQueue<>();
     /*record the goal state of the puzzle for check.*/
-    private final int[][] goal;
-    private final String[] actions;
+    protected int[][] goal;
+    protected String[] actions;
     /*Use a hashMap to keep track of explored nodes and f_n and fast lookup.*/
-    private final Map<String, Integer> reached = new HashMap<>();
+    protected Map<String, Integer> reached = new HashMap<>();
     /*Using type to decide which heuristic function to use.*/
-    private final int type;
+    protected int type;
     /*record the number of nodes expanded.*/
     int NodesExpanded = 0;
     /*record the number of states repeated.*/
@@ -25,7 +25,7 @@ public class Astar {
     }
 
     //this function checks if the current state matches the goal.
-    private boolean check(int[][] state) {
+    protected boolean check(int[][] state) {
         return Arrays.deepEquals(state, goal);
     }
 
